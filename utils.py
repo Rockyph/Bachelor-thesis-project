@@ -134,7 +134,7 @@ def estimate_compression(model, data, nsamples, context, batch_size, verbose=Fal
         target_indices.append(instance.size(0) - 2) # index of the last element of the context
 
         if instance.size(0) < context + 1:
-            pad = torch.zeros(size=(context + 1 - instance.size(0),), dtype=torch.long)
+            pad = torch.zeros(size=(context + 1 - instance.size(0),), dtype=torch.long).to(device)
             instance = torch.cat([instance, pad], dim=0).to(device)
             # -- the first tokens don't have enough tokens preceding them, so we pad them to the right size.
 
