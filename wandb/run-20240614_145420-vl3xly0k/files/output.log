@@ -1,0 +1,107 @@
+
+  0%|                                                                               | 2/40000 [00:01<8:35:40,  1.29it/s]
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                               | 5/40000 [00:03<7:08:02,  1.56it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                               | 8/40000 [00:05<6:59:17,  1.59it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 11/40000 [00:07<6:58:18,  1.59it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 15/40000 [00:09<6:49:09,  1.63it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 18/40000 [00:11<7:08:59,  1.55it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 21/40000 [00:13<7:13:14,  1.54it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 24/40000 [00:15<7:02:59,  1.58it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 27/40000 [00:17<7:02:27,  1.58it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 30/40000 [00:19<7:04:32,  1.57it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 33/40000 [00:21<7:11:23,  1.54it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 37/40000 [00:23<7:12:36,  1.54it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+  0%|                                                                              | 38/40000 [00:24<7:11:15,  1.54it/s][34m[1mwandb[39m[22m: 429 encountered (Filestream rate limit exceeded, retrying in 2.4 seconds.), retrying request
+  0%|                                                                              | 40/40000 [00:25<7:09:53,  1.55it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 43/40000 [00:27<7:08:08,  1.56it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 46/40000 [00:29<7:02:36,  1.58it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 49/40000 [00:31<7:21:01,  1.51it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 52/40000 [00:33<7:11:48,  1.54it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 55/40000 [00:35<7:03:04,  1.57it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 59/40000 [00:37<6:52:09,  1.62it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|                                                                              | 62/40000 [00:39<7:08:58,  1.55it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|▏                                                                             | 65/40000 [00:41<7:01:57,  1.58it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|▏                                                                             | 68/40000 [00:43<7:00:49,  1.58it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|▏                                                                             | 71/40000 [00:45<6:59:00,  1.59it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|▏                                                                             | 74/40000 [00:47<7:21:01,  1.51it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|▏                                                                             | 77/40000 [00:49<7:18:20,  1.52it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here
+
+  0%|▏                                                                             | 81/40000 [00:52<7:13:26,  1.53it/s]
+torch.Size([32, 256, 256]) here
+torch.Size([32, 256, 256]) here

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/philip/Desktop/Bachelor thesis project/perceiver_train.py", line 95, in <module>
+    train()
+  File "/Users/philip/Desktop/Bachelor thesis project/perceiver_train.py", line 28, in train
+    model = PerceiverModel(embed_dim=config['embed_dim'], num_heads=config['heads'], d_ff=config['d_ff'],
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: PerceiverModel.__init__() got an unexpected keyword argument 'N'

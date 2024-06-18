@@ -158,3 +158,4 @@ class TransformerModel(nn.Module):
         x = F.log_softmax(x, dim=2)
         
         return x
+    

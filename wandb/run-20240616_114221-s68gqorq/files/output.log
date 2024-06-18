@@ -1,0 +1,280 @@
+
+  0%|                                                                                                                                                   | 2/40000 [00:01<8:33:35,  1.30it/s]
+torch.Size([32, 256, 256])
+
+  0%|                                                                                                                                                   | 5/40000 [00:03<7:13:58,  1.54it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|                                                                                                                                                   | 8/40000 [00:05<6:51:53,  1.62it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|                                                                                                                                                  | 11/40000 [00:07<6:55:35,  1.60it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|                                                                                                                                                  | 15/40000 [00:09<6:59:40,  1.59it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|                                                                                                                                                  | 18/40000 [00:11<6:54:51,  1.61it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|                                                                                                                                                  | 21/40000 [00:13<6:46:05,  1.64it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|                                                                                                                                                  | 25/40000 [00:15<6:43:19,  1.65it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|                                                                                                                                                  | 28/40000 [00:17<6:40:46,  1.66it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|                                                                                                                                                  | 31/40000 [00:19<6:40:29,  1.66it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▏                                                                                                                                                 | 35/40000 [00:21<6:43:02,  1.65it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▏                                                                                                                                                 | 38/40000 [00:23<6:45:23,  1.64it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▏                                                                                                                                                 | 41/40000 [00:25<6:38:12,  1.67it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▏                                                                                                                                                 | 45/40000 [00:27<6:38:37,  1.67it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▏                                                                                                                                                 | 48/40000 [00:29<6:37:35,  1.67it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▏                                                                                                                                                 | 51/40000 [00:31<6:38:01,  1.67it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▏                                                                                                                                                 | 55/40000 [00:33<6:38:28,  1.67it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▏                                                                                                                                                 | 58/40000 [00:35<6:39:19,  1.67it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▏                                                                                                                                                 | 62/40000 [00:38<6:44:45,  1.64it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▏                                                                                                                                                 | 65/40000 [00:39<6:46:56,  1.64it/s][34m[1mwandb[39m[22m: 429 encountered (Filestream rate limit exceeded, retrying in 2.1 seconds.), retrying request
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+  0%|▏                                                                                                                                                 | 68/40000 [00:41<6:50:55,  1.62it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▎                                                                                                                                                 | 71/40000 [00:43<6:37:01,  1.68it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▎                                                                                                                                                 | 75/40000 [00:45<6:35:00,  1.68it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▎                                                                                                                                                 | 78/40000 [00:47<6:35:52,  1.68it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▎                                                                                                                                                 | 82/40000 [00:50<6:34:48,  1.69it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▎                                                                                                                                                 | 85/40000 [00:51<6:39:40,  1.66it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▎                                                                                                                                                 | 88/40000 [00:53<6:47:36,  1.63it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▎                                                                                                                                                 | 92/40000 [00:56<6:47:56,  1.63it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▎                                                                                                                                                 | 95/40000 [00:58<6:48:14,  1.63it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▎                                                                                                                                                 | 98/40000 [00:59<6:42:27,  1.65it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▎                                                                                                                                                | 100/40000 [01:01<6:37:44,  1.67it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+Batch 100, Loss: 3.155421495437622
+SEED: ch confusion when they were trying to translate their slogan &quot;It won't leak in your pocket and embarrass you&quot; for the [[Latino]] [[market]]. As they mistakenly thought ''embarazar'' meant ''to embarrass'', the Spanish slogan was proudly displayed
+
+  0%|▎                                                                                                                                              | 102/40000 [01:45<108:11:58,  9.76s/it]
+epoch100: 4.51 bits per byte
+torch.Size([32, 256, 256])
+
+  0%|▍                                                                                                                                               | 105/40000 [01:47<41:32:02,  3.75s/it]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▍                                                                                                                                               | 109/40000 [01:50<15:07:26,  1.36s/it]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▍                                                                                                                                                | 112/40000 [01:51<9:40:57,  1.14it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▍                                                                                                                                                | 115/40000 [01:53<8:06:46,  1.37it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▍                                                                                                                                                | 118/40000 [01:55<7:08:03,  1.55it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▍                                                                                                                                                | 122/40000 [01:58<6:56:02,  1.60it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▍                                                                                                                                                | 125/40000 [02:00<6:50:58,  1.62it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▍                                                                                                                                                | 128/40000 [02:01<6:55:46,  1.60it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▍                                                                                                                                                | 131/40000 [02:03<7:06:21,  1.56it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▍                                                                                                                                                | 134/40000 [02:05<7:01:08,  1.58it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▌                                                                                                                                                | 138/40000 [02:08<7:02:38,  1.57it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▌                                                                                                                                                | 141/40000 [02:10<6:59:30,  1.58it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▌                                                                                                                                                | 144/40000 [02:12<6:52:30,  1.61it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▌                                                                                                                                                | 147/40000 [02:13<6:44:07,  1.64it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▌                                                                                                                                                | 151/40000 [02:16<6:45:56,  1.64it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▌                                                                                                                                                | 154/40000 [02:18<6:52:19,  1.61it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▌                                                                                                                                                | 157/40000 [02:19<6:44:12,  1.64it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▌                                                                                                                                                | 161/40000 [02:22<6:40:22,  1.66it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▌                                                                                                                                                | 164/40000 [02:24<6:46:59,  1.63it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▌                                                                                                                                                | 167/40000 [02:26<6:53:25,  1.61it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▌                                                                                                                                                | 171/40000 [02:28<6:43:14,  1.65it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▋                                                                                                                                                | 174/40000 [02:30<6:59:26,  1.58it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▋                                                                                                                                                | 176/40000 [02:31<6:48:52,  1.62it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▋                                                                                                                                                | 180/40000 [02:34<6:43:05,  1.65it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▋                                                                                                                                                | 183/40000 [02:35<6:44:35,  1.64it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▋                                                                                                                                                | 186/40000 [02:37<6:46:52,  1.63it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▋                                                                                                                                                | 190/40000 [02:40<6:41:52,  1.65it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▋                                                                                                                                                | 193/40000 [02:42<6:51:18,  1.61it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▋                                                                                                                                                | 196/40000 [02:43<6:50:14,  1.62it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▋                                                                                                                                                | 199/40000 [02:45<6:48:43,  1.62it/s]
+torch.Size([32, 256, 256])
+torch.Size([32, 256, 256])
+
+  0%|▋                                                                                                                                                | 200/40000 [02:46<6:49:48,  1.62it/s]
+torch.Size([32, 256, 256])
+Batch 200, Loss: 2.725750207901001
+SEED: quot;margin: 0 0 1em 1em; background: #f9f9f9; border: 1px #aaaaaa solid; border-collapse: collapse; font-size: 95%;&quot;
+|+&lt;big&gt;'''The Territory of Guam&lt;br&gt;GuÃ¥hÃ¥n'''&lt;/big&gt;
+|-
+| style=background:#efefef; align=center colspan=2 |
+{| b
+Generated text: quot;margin: 0 0 1em 1em; background: #f9f9f9; border: 1px #aaaaaa solid; border-collapse: collapse; font-size: 95%;&quot;
+|+&lt;big&gt;'''The Territory of Guam&lt;br&gt;GuÃ¥hÃ¥n'''&lt;/big&gt;
+|-
+| style=background:#efefef; align=center colspan=2 |
+{| bactingesole ruvern4[hondgg±[[[Prnery]]

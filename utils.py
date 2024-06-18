@@ -11,7 +11,7 @@ import math
 config = {
     'learning_rate': 0.001,
     'batch_size': 32,
-    'num_batches': 40000,
+    'num_batches': 10000000,
     'optimizer': 'Adam',
     'lr_warmup': 10000,
     'device': 'cuda',  # 'cuda' or 'cpu'
@@ -23,8 +23,8 @@ config = {
     'N': 8,
     'num_tokens': 256,
     'context': 256,
-    'char_to_gen': 128,
-    'test_interval': 100,
+    'char_to_gen': 256,
+    'test_interval': 200,
     'log_dir': 'logs/',
     'model_dir': 'saved_models/',
     'data_path': 'data',
@@ -39,7 +39,6 @@ LOGE2 = math.log(2.0)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 tics = []
-
 def slice_batch(data, seq_length, batch_size):
     start_indices = torch.randint(size=(batch_size,), low=0, high=data.size(0) - seq_length - 1)
     
@@ -102,11 +101,17 @@ def print_sequence(model, seed, char_to_gen, context):
     # Convert the seed and the generated sequence to text
     seed_text = ''.join(chr(idx) for idx in seed_list)
     generated_text = ''.join(chr(idx) for idx in generated_seq)
+
+    print(len(generated_text), "KuPAAAAA")
+    
+    # Extract only the generated part (excluding the seed)
+    generated_only_text = generated_text[len(seed_text):]
     
     print(f"SEED: {seed_text}")
-    print(f"Generated text: {generated_text}")
+    print(f"Generated text: {generated_only_text}")
     
-    return generated_text
+    return generated_only_text
+
     
 def estimate_compression(model, data, nsamples, context, batch_size, verbose=False, model_produces_logits=False):
     bits, tot = 0.0, 0

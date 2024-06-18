@@ -1,0 +1,84 @@
+wandb_version: 1
+
+learning_rate:
+  desc: null
+  value: 0.001
+batch_size:
+  desc: null
+  value: 32
+num_batches:
+  desc: null
+  value: 40000
+optimizer:
+  desc: null
+  value: Adam
+lr_warmup:
+  desc: null
+  value: 10000
+device:
+  desc: null
+  value: cuda
+seed:
+  desc: null
+  value: 42
+embed_dim:
+  desc: null
+  value: 128
+heads:
+  desc: null
+  value: 4
+d_ff:
+  desc: null
+  value: 256
+seq_len:
+  desc: null
+  value: 256
+N:
+  desc: null
+  value: 8
+num_tokens:
+  desc: null
+  value: 256
+context:
+  desc: null
+  value: 256
+char_to_gen:
+  desc: null
+  value: 128
+test_interval:
+  desc: null
+  value: 100
+log_dir:
+  desc: null
+  value: logs/
+model_dir:
+  desc: null
+  value: saved_models/
+data_path:
+  desc: null
+  value: data
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.4
+    cli_version: 0.17.1
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1718531163
+    t:
+      1:
+      - 1
+      - 55
+      2:
+      - 1
+      - 55
+      3:
+      - 16
+      - 23
+      4: 3.11.4
+      5: 0.17.1
+      8:
+      - 4
+      - 5
+      13: darwin-arm64

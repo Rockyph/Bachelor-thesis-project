@@ -1,0 +1,202 @@
+2024-06-12 00:44:14,592 INFO    StreamThr :8317 [internal.py:wandb_internal():85] W&B internal server running at pid: 8317, started at: 2024-06-12 00:44:14.591158
+2024-06-12 00:44:14,593 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: status
+2024-06-12 00:44:14,595 INFO    WriterThread:8317 [datastore.py:open_for_write():87] open: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/run-jhir57dy.wandb
+2024-06-12 00:44:14,595 DEBUG   SenderThread:8317 [sender.py:send():379] send: header
+2024-06-12 00:44:14,614 DEBUG   SenderThread:8317 [sender.py:send():379] send: run
+2024-06-12 00:44:15,084 INFO    SenderThread:8317 [dir_watcher.py:__init__():211] watching files in: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files
+2024-06-12 00:44:15,084 INFO    SenderThread:8317 [sender.py:_start_run_threads():1188] run started: jhir57dy with start time 1718145854.591564
+2024-06-12 00:44:15,100 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: check_version
+2024-06-12 00:44:15,100 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: check_version
+2024-06-12 00:44:15,232 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: run_start
+2024-06-12 00:44:15,242 DEBUG   HandlerThread:8317 [system_info.py:__init__():26] System info init
+2024-06-12 00:44:15,242 DEBUG   HandlerThread:8317 [system_info.py:__init__():41] System info init done
+2024-06-12 00:44:15,242 INFO    HandlerThread:8317 [system_monitor.py:start():194] Starting system monitor
+2024-06-12 00:44:15,242 INFO    SystemMonitor:8317 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-06-12 00:44:15,242 INFO    HandlerThread:8317 [system_monitor.py:probe():214] Collecting system info
+2024-06-12 00:44:15,246 INFO    SystemMonitor:8317 [interfaces.py:start():188] Started cpu monitoring
+2024-06-12 00:44:15,249 INFO    SystemMonitor:8317 [interfaces.py:start():188] Started disk monitoring
+2024-06-12 00:44:15,251 INFO    SystemMonitor:8317 [interfaces.py:start():188] Started gpuapple monitoring
+2024-06-12 00:44:15,253 INFO    SystemMonitor:8317 [interfaces.py:start():188] Started memory monitoring
+2024-06-12 00:44:15,253 INFO    SystemMonitor:8317 [interfaces.py:start():188] Started network monitoring
+2024-06-12 00:44:15,348 ERROR   HandlerThread:8317 [gpu_apple.py:probe():176] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 164, in probe
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-12 00:44:15,349 DEBUG   HandlerThread:8317 [system_info.py:probe():152] Probing system
+2024-06-12 00:44:15,353 DEBUG   HandlerThread:8317 [system_info.py:_probe_git():137] Probing git
+2024-06-12 00:44:15,366 DEBUG   HandlerThread:8317 [system_info.py:_probe_git():145] Probing git done
+2024-06-12 00:44:15,366 DEBUG   HandlerThread:8317 [system_info.py:probe():200] Probing system done
+2024-06-12 00:44:15,366 DEBUG   HandlerThread:8317 [system_monitor.py:probe():223] {'os': 'macOS-14.0-arm64-arm-64bit', 'python': '3.11.4', 'heartbeatAt': '2024-06-11T22:44:15.349872', 'startedAt': '2024-06-11T22:44:14.584783', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/Users/philip/Desktop/Bachelor thesis project/perceiver_train.py', 'codePathLocal': 'perceiver_train.py', 'codePath': 'perceiver_train.py', 'git': {'remote': 'https://github.com/Rockyph/Bachelor-thesis-project.git', 'commit': '88d29ba1325adde1e67752ecb38bc6337406ce9a'}, 'email': 'philipchristianrocki@gmail.com', 'root': '/Users/philip/Desktop/Bachelor thesis project', 'host': 'Philip.local', 'username': 'philip', 'executable': '/usr/local/bin/python3', 'cpu_count': 8, 'cpu_count_logical': 8, 'disk': {'/': {'total': 460.4317207336426, 'used': 13.794960021972656}}, 'gpuapple': {'type': 'arm', 'vendor': 'Apple'}, 'memory': {'total': 16.0}}
+2024-06-12 00:44:15,366 INFO    HandlerThread:8317 [system_monitor.py:probe():224] Finished collecting system info
+2024-06-12 00:44:15,366 INFO    HandlerThread:8317 [system_monitor.py:probe():227] Publishing system info
+2024-06-12 00:44:15,366 INFO    HandlerThread:8317 [system_monitor.py:probe():229] Finished publishing system info
+2024-06-12 00:44:15,368 DEBUG   SenderThread:8317 [sender.py:send():379] send: files
+2024-06-12 00:44:15,368 INFO    SenderThread:8317 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2024-06-12 00:44:15,425 ERROR   gpuapple  :8317 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-12 00:44:15,430 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: python_packages
+2024-06-12 00:44:15,430 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: python_packages
+2024-06-12 00:44:15,430 DEBUG   SenderThread:8317 [sender.py:send():379] send: telemetry
+2024-06-12 00:44:15,430 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-12 00:44:15,431 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-12 00:44:15,431 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: stop_status
+2024-06-12 00:44:15,720 DEBUG   SenderThread:8317 [sender.py:send():379] send: exit
+2024-06-12 00:44:15,720 INFO    SenderThread:8317 [sender.py:send_exit():586] handling exit code: 1
+2024-06-12 00:44:15,721 INFO    SenderThread:8317 [sender.py:send_exit():588] handling runtime: 0
+2024-06-12 00:44:15,721 INFO    SenderThread:8317 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-12 00:44:15,722 INFO    SenderThread:8317 [sender.py:send_exit():594] send defer
+2024-06-12 00:44:15,722 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:15,722 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 0
+2024-06-12 00:44:15,722 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:15,723 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 0
+2024-06-12 00:44:15,723 INFO    SenderThread:8317 [sender.py:transition_state():614] send defer: 1
+2024-06-12 00:44:15,723 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:15,723 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 1
+2024-06-12 00:44:15,723 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:15,723 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 1
+2024-06-12 00:44:15,723 INFO    SenderThread:8317 [sender.py:transition_state():614] send defer: 2
+2024-06-12 00:44:15,723 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:15,723 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 2
+2024-06-12 00:44:15,723 INFO    HandlerThread:8317 [system_monitor.py:finish():203] Stopping system monitor
+2024-06-12 00:44:15,724 DEBUG   SystemMonitor:8317 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-06-12 00:44:15,724 INFO    HandlerThread:8317 [interfaces.py:finish():200] Joined cpu monitor
+2024-06-12 00:44:15,724 DEBUG   SystemMonitor:8317 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-06-12 00:44:15,724 INFO    HandlerThread:8317 [interfaces.py:finish():200] Joined disk monitor
+2024-06-12 00:44:15,724 DEBUG   SystemMonitor:8317 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-06-12 00:44:15,724 INFO    HandlerThread:8317 [interfaces.py:finish():200] Joined gpuapple monitor
+2024-06-12 00:44:15,726 INFO    HandlerThread:8317 [interfaces.py:finish():200] Joined memory monitor
+2024-06-12 00:44:15,726 INFO    HandlerThread:8317 [interfaces.py:finish():200] Joined network monitor
+2024-06-12 00:44:15,726 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:15,727 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 2
+2024-06-12 00:44:15,727 INFO    SenderThread:8317 [sender.py:transition_state():614] send defer: 3
+2024-06-12 00:44:15,727 DEBUG   SenderThread:8317 [sender.py:send():379] send: telemetry
+2024-06-12 00:44:15,727 DEBUG   SenderThread:8317 [sender.py:send():379] send: stats
+2024-06-12 00:44:15,727 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:15,727 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 3
+2024-06-12 00:44:15,727 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:15,727 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 3
+2024-06-12 00:44:15,727 INFO    SenderThread:8317 [sender.py:transition_state():614] send defer: 4
+2024-06-12 00:44:15,728 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:15,728 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 4
+2024-06-12 00:44:15,728 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:15,728 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 4
+2024-06-12 00:44:15,728 INFO    SenderThread:8317 [sender.py:transition_state():614] send defer: 5
+2024-06-12 00:44:15,728 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:15,728 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 5
+2024-06-12 00:44:15,728 DEBUG   SenderThread:8317 [sender.py:send():379] send: summary
+2024-06-12 00:44:15,729 INFO    SenderThread:8317 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-12 00:44:15,729 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:15,729 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 5
+2024-06-12 00:44:15,729 INFO    SenderThread:8317 [sender.py:transition_state():614] send defer: 6
+2024-06-12 00:44:15,729 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:15,729 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 6
+2024-06-12 00:44:15,729 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:15,729 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 6
+2024-06-12 00:44:15,733 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: status_report
+2024-06-12 00:44:15,912 INFO    SenderThread:8317 [sender.py:transition_state():614] send defer: 7
+2024-06-12 00:44:15,912 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:15,912 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 7
+2024-06-12 00:44:15,912 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:15,912 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 7
+2024-06-12 00:44:16,001 INFO    wandb-upload_0:8317 [upload_job.py:push():130] Uploaded file /var/folders/fk/p554nvt53n7d415kgm1817100000gn/T/tmput0cmpq7wandb/97g0yz7m-wandb-metadata.json
+2024-06-12 00:44:16,093 INFO    Thread-12 :8317 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/config.yaml
+2024-06-12 00:44:16,093 INFO    Thread-12 :8317 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/wandb-metadata.json
+2024-06-12 00:44:16,093 INFO    Thread-12 :8317 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/requirements.txt
+2024-06-12 00:44:16,093 INFO    Thread-12 :8317 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/output.log
+2024-06-12 00:44:16,094 INFO    Thread-12 :8317 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/wandb-summary.json
+2024-06-12 00:44:16,469 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-12 00:44:17,728 INFO    SenderThread:8317 [sender.py:transition_state():614] send defer: 8
+2024-06-12 00:44:17,728 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: poll_exit
+2024-06-12 00:44:17,728 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:17,729 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 8
+2024-06-12 00:44:17,729 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:17,730 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 8
+2024-06-12 00:44:17,730 INFO    SenderThread:8317 [job_builder.py:build():440] Attempting to build job artifact
+2024-06-12 00:44:17,731 INFO    SenderThread:8317 [job_builder.py:_get_source_type():569] is repo sourced job
+2024-06-12 00:44:17,774 INFO    SenderThread:8317 [job_builder.py:build():545] adding wandb-job metadata file
+2024-06-12 00:44:17,776 INFO    SenderThread:8317 [sender.py:transition_state():614] send defer: 9
+2024-06-12 00:44:17,776 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:17,776 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 9
+2024-06-12 00:44:17,776 DEBUG   SenderThread:8317 [sender.py:send():379] send: artifact
+2024-06-12 00:44:18,101 INFO    Thread-12 :8317 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/output.log
+2024-06-12 00:44:18,477 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-12 00:44:18,537 INFO    SenderThread:8317 [sender.py:send_artifact():1530] sent artifact job-https___github.com_Rockyph_Bachelor-thesis-project.git_perceiver_train.py - {'id': 'QXJ0aWZhY3Q6ODY4MDk5NDU3', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE4NDg0NjQxNw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6ODY4MDk5NDU3', 'versionIndex': 0}}}
+2024-06-12 00:44:18,537 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:18,537 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 9
+2024-06-12 00:44:18,537 INFO    SenderThread:8317 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-06-12 00:44:19,107 INFO    SenderThread:8317 [dir_watcher.py:finish():388] scan: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files
+2024-06-12 00:44:19,108 INFO    SenderThread:8317 [dir_watcher.py:finish():402] scan save: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/requirements.txt requirements.txt
+2024-06-12 00:44:19,108 INFO    SenderThread:8317 [dir_watcher.py:finish():402] scan save: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/output.log output.log
+2024-06-12 00:44:19,111 INFO    SenderThread:8317 [dir_watcher.py:finish():402] scan save: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/config.yaml config.yaml
+2024-06-12 00:44:19,114 INFO    SenderThread:8317 [dir_watcher.py:finish():402] scan save: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/wandb-summary.json wandb-summary.json
+2024-06-12 00:44:19,114 INFO    SenderThread:8317 [dir_watcher.py:finish():402] scan save: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/wandb-metadata.json wandb-metadata.json
+2024-06-12 00:44:19,116 INFO    SenderThread:8317 [sender.py:transition_state():614] send defer: 10
+2024-06-12 00:44:19,117 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: poll_exit
+2024-06-12 00:44:19,119 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:19,119 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 10
+2024-06-12 00:44:19,120 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:19,120 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 10
+2024-06-12 00:44:19,120 INFO    SenderThread:8317 [file_pusher.py:finish():169] shutting down file pusher
+2024-06-12 00:44:19,483 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-12 00:44:19,483 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: poll_exit
+2024-06-12 00:44:19,498 INFO    wandb-upload_0:8317 [upload_job.py:push():130] Uploaded file /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/requirements.txt
+2024-06-12 00:44:19,568 INFO    wandb-upload_1:8317 [upload_job.py:push():130] Uploaded file /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/output.log
+2024-06-12 00:44:19,647 INFO    wandb-upload_3:8317 [upload_job.py:push():130] Uploaded file /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/wandb-summary.json
+2024-06-12 00:44:19,647 INFO    wandb-upload_2:8317 [upload_job.py:push():130] Uploaded file /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/files/config.yaml
+2024-06-12 00:44:19,853 INFO    Thread-11 (_thread_body):8317 [sender.py:transition_state():614] send defer: 11
+2024-06-12 00:44:19,853 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:19,853 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 11
+2024-06-12 00:44:19,854 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:19,854 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 11
+2024-06-12 00:44:19,854 INFO    SenderThread:8317 [file_pusher.py:join():175] waiting for file pusher
+2024-06-12 00:44:19,854 INFO    SenderThread:8317 [sender.py:transition_state():614] send defer: 12
+2024-06-12 00:44:19,855 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:19,855 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 12
+2024-06-12 00:44:19,855 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:19,855 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 12
+2024-06-12 00:44:19,855 INFO    SenderThread:8317 [file_stream.py:finish():601] file stream finish called
+2024-06-12 00:44:20,030 INFO    SenderThread:8317 [file_stream.py:finish():605] file stream finish is done
+2024-06-12 00:44:20,030 INFO    SenderThread:8317 [sender.py:transition_state():614] send defer: 13
+2024-06-12 00:44:20,030 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:20,030 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 13
+2024-06-12 00:44:20,030 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:20,030 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 13
+2024-06-12 00:44:20,030 INFO    SenderThread:8317 [sender.py:transition_state():614] send defer: 14
+2024-06-12 00:44:20,031 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: defer
+2024-06-12 00:44:20,031 INFO    HandlerThread:8317 [handler.py:handle_request_defer():184] handle defer: 14
+2024-06-12 00:44:20,031 DEBUG   SenderThread:8317 [sender.py:send():379] send: final
+2024-06-12 00:44:20,031 DEBUG   SenderThread:8317 [sender.py:send():379] send: footer
+2024-06-12 00:44:20,031 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: defer
+2024-06-12 00:44:20,031 INFO    SenderThread:8317 [sender.py:send_request_defer():610] handle sender defer: 14
+2024-06-12 00:44:20,031 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-12 00:44:20,032 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: poll_exit
+2024-06-12 00:44:20,032 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: server_info
+2024-06-12 00:44:20,032 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-12 00:44:20,033 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: server_info
+2024-06-12 00:44:20,034 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: get_summary
+2024-06-12 00:44:20,034 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: sampled_history
+2024-06-12 00:44:20,034 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-12 00:44:20,172 DEBUG   SenderThread:8317 [sender.py:send_request():406] send_request: poll_exit
+2024-06-12 00:44:20,173 INFO    MainThread:8317 [wandb_run.py:_footer_history_summary_info():4008] rendering history
+2024-06-12 00:44:20,173 INFO    MainThread:8317 [wandb_run.py:_footer_history_summary_info():4040] rendering summary
+2024-06-12 00:44:20,174 INFO    MainThread:8317 [wandb_run.py:_footer_sync_info():3967] logging synced files
+2024-06-12 00:44:20,175 DEBUG   HandlerThread:8317 [handler.py:handle_request():158] handle_request: shutdown
+2024-06-12 00:44:20,175 INFO    HandlerThread:8317 [handler.py:finish():882] shutting down handler
+2024-06-12 00:44:21,038 INFO    WriterThread:8317 [datastore.py:close():296] close: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240612_004414-jhir57dy/run-jhir57dy.wandb
+2024-06-12 00:44:21,178 INFO    SenderThread:8317 [sender.py:finish():1608] shutting down sender
+2024-06-12 00:44:21,178 INFO    SenderThread:8317 [file_pusher.py:finish():169] shutting down file pusher
+2024-06-12 00:44:21,178 INFO    SenderThread:8317 [file_pusher.py:join():175] waiting for file pusher

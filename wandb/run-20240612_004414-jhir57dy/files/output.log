@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/philip/Desktop/Bachelor thesis project/perceiver_train.py", line 94, in <module>
+    train()
+  File "/Users/philip/Desktop/Bachelor thesis project/perceiver_train.py", line 28, in train
+    model = PerceiverModel(embed_dim=128, latent_dim=256, heads=4, d_ff=512, seq_len=100, N=6, num_tokens=10000, latent_size=128).to(device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: PerceiverModel.__init__() got an unexpected keyword argument 'heads'

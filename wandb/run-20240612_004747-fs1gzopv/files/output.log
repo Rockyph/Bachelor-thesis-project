@@ -1,0 +1,26 @@
+  0%|                                                                                         | 0/40000 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/Users/philip/Desktop/Bachelor thesis project/perceiver_train.py", line 94, in <module>
+    train()
+  File "/Users/philip/Desktop/Bachelor thesis project/perceiver_train.py", line 46, in train
+    output = model(input)
+             ^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/philip/Desktop/Bachelor thesis project/Perceiver.py", line 125, in forward
+    x = self.embedding_layer(x)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/philip/Desktop/Bachelor thesis project/Perceiver.py", line 34, in forward
+    return token_embed + pos_encodings[:seq_len]
+           ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+RuntimeError: The size of tensor a (256) must match the size of tensor b (100) at non-singleton dimension 1
