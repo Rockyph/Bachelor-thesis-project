@@ -14,22 +14,22 @@ class InputEmbedding(nn.Module):
         self.embed_dim = embed_dim
         self.max_seq_len = max_seq_len
         self.embedding = nn.Embedding(vocab_size, embed_dim)
-        self.pos_enc = self.positional_encoding(max_seq_len, embed_dim, 10000).to(device)
+        self.register_buffer('pos_enc', self.positional_encoding(max_seq_len, embed_dim, 10000))
     
     @staticmethod      
     def positional_encoding(max_seq_len, embed_dim, n):
-        position = torch.arange(max_seq_len, device=device).unsqueeze(1)
-        division_term = torch.exp(torch.arange(0, embed_dim, 2, device=device) * (-np.log(n) / embed_dim))
-        pos_enc = torch.zeros(max_seq_len, embed_dim, device=device)
+        position = torch.arange(max_seq_len).unsqueeze(1)
+        division_term = torch.exp(torch.arange(0, embed_dim, 2) * (-np.log(n) / embed_dim))
+        pos_enc = torch.zeros(max_seq_len, embed_dim)
         
         pos_enc[:, 0::2] = torch.sin(position * division_term)
-        pos_enc[:, 1::2] = torch.cos(position * division_term)     
+        pos_enc[:, 1::2] = torch.cos(position * division_term)
         return pos_enc  
     
     def forward(self, x):
         batch_size, seq_len = x.size()
         token_embed = self.embedding(x)
-        pos_encodings = self.pos_enc[:seq_len, :].unsqueeze(0).expand(batch_size, -1, -1)
+        pos_encodings = self.pos_enc[:seq_len, :].unsqueeze(0).expand(batch_size, -1, -1).to(x.device)
         return token_embed + pos_encodings
 
 class MultiHeadSelfAttention(nn.Module):
@@ -144,16 +144,16 @@ class PerceiverModel(nn.Module):
         super().__init__()
         self.num_tokens = num_tokens
         self.embedding_layer = InputEmbedding(num_tokens, embed_dim, seq_len)
-        self.latent = nn.Parameter(torch.randn(latent_len, latent_dim, device=device))
+        self.latent = nn.Parameter(torch.randn(latent_len, latent_dim))
         self.cross_attention = CrossAttention(latent_dim, embed_dim, heads)
         self.transformer_layers = nn.ModuleList([TransformerBlock(latent_dim, heads, d_ff) for _ in range(N)])
         self.dropout = nn.Dropout(0.1)
         self.to_probs = nn.Linear(latent_dim, num_tokens)  # Map to the number of tokens
 
     def forward(self, x):
-        x = self.embedding_layer(x)
+        x = self.embedding_layer(x).to(device)
         batch_size, seq_length, embed_dim = x.size()
-        latent = self.latent.unsqueeze(0).expand(batch_size, -1, -1)
+        latent = self.latent.unsqueeze(0).expand(batch_size, -1, -1).to(device)
         latent = self.cross_attention(latent, x)
         
         for layer in self.transformer_layers:
@@ -161,4 +161,5 @@ class PerceiverModel(nn.Module):
         
         x = self.to_probs(latent)  # Shape: [batch_size, latent_len, num_tokens]
         return F.log_softmax(x, dim=-1)  # Apply log_softmax for the NLL loss
+
 
