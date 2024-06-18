@@ -52,6 +52,8 @@ def train():
             "Instances Seen": instances_seen})
         optimizer.step()
         if i != 0 and (i %  config['test_interval'] == 0 or i == config['num_batches'] - 1):
+
+            
             print(f"Batch {i}, Loss: {loss.item()}")
             
             

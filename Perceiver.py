@@ -6,6 +6,7 @@ from utils import *
 from data import *
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print("Device:", device)
 
 class InputEmbedding(nn.Module):
     def __init__(self, vocab_size, embed_dim, max_seq_len):
