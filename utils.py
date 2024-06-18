@@ -127,6 +127,9 @@ def estimate_compression(model, data, nsamples, context, batch_size, verbose=Fal
         to = current + 1
 
         instance = data[fr:to].to(torch.long) # the context is the input
+        
+        if torch.cuda.is_available():
+            instance = instance.cuda()
 
         target_indices.append(instance.size(0) - 2) # index of the last element of the context
 
@@ -137,8 +140,7 @@ def estimate_compression(model, data, nsamples, context, batch_size, verbose=Fal
 
             assert instance.size(0) == context + 1 # all instances should be `context` + 1 long
 
-        if torch.cuda.is_available():
-            instance = instance.cuda()
+     
 
         batch.append(instance[None, :])
         # -- We add a singleton dimension to concatenate along later.
