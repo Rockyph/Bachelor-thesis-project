@@ -21,7 +21,7 @@ def get_optimizer(optimizer_name, model_parameters, lr):
         raise ValueError(f"Unsupported optimizer: {optimizer_name}")
     
 def train():
-    torch.manual_seed(config['seed'])
+  
     device = get_device()
     
     train_data, val_data, test_data = download_and_extract('http://mattmahoney.net/dc/enwik8.zip', config['data_path'])
@@ -83,13 +83,8 @@ def train():
             # -- Since we're not computing gradients, we can increase the batch size a little from what we used in
             #    training.
 
-            wandb.log({"bytes per char: ": bits_per_byte,
-            "Gradient norm": total_norm,
-            "Learning Rate": config['learning_rate'],
-            "Batch": i,
-            "Instances Seen": instances_seen})
-
             print(f'epoch{i}: {bits_per_byte:.4} bits per byte')
+            wandb.log({"Loss/train": bits_per_byte})
             #-- 0.9 bit per byte is around the state of the art.
             
 train()
