@@ -55,7 +55,7 @@ def train():
 
         print(f"Target min value: {target.min()}, Target max value: {target.max()}")
 
-        loss = F.nll_loss(output, target, reduction='mean')
+        loss = F.nll_loss(output.transpose(1, 2), target, reduction='mean')
         loss.backward()
         total_norm = nn.utils.clip_grad_norm_(model.parameters(), 1.0)
 

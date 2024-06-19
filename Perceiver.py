@@ -180,8 +180,7 @@ class PerceiverModel(nn.Module):
             latent = layer(latent)
         
         x = self.to_probs(latent)  # Shape: [batch_size, latent_len, num_tokens]
-        print(F.softmax(x, dim=-1), "this is the raw output of the model")
-
+        
         return F.log_softmax(x, dim=-1)  # Apply log_softmax for the NLL loss
 
 
