@@ -1,0 +1,13 @@
+
+Device: cpu
+  0%|                                                                                                                                                          | 0/10000000 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/Users/philip/Desktop/Bachelor thesis project/perceiver_train.py", line 80, in <module>
+    train()
+  File "/Users/philip/Desktop/Bachelor thesis project/perceiver_train.py", line 45, in train
+    loss = F.nll_loss(output.transpose(2, 1), target, reduction='mean')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/nn/functional.py", line 2729, in nll_loss
+    return torch._C._nn.nll_loss_nd(input, target, weight, _Reduction.get_enum(reduction), ignore_index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected target size [32, 64], got [32, 256]

@@ -1,0 +1,1 @@
+{"Loss/train": 0.017495211213827133, "Gradient norm": 0.10920695960521698, "Learning Rate": 0.001, "Batch": 2000, "Instances Seen": 64032, "Time per batch": 0.26569271087646484, "_timestamp": 1718741861.5554519, "_runtime": 1850.5748999118805, "_step": 2009, "Bits per byte": 4.58223359375}

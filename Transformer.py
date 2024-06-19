@@ -154,8 +154,12 @@ class TransformerModel(nn.Module):
             x = layer(x, mask=mask)
         
         x = self.to_probs(x.view(batch_size*seq_length, embed_dim)).view(batch_size, seq_length, self.num_tokens)
+        print(F.log_softmax(x, dim=2))
         
         x = F.log_softmax(x, dim=2)
         
         return x
+    
+
+    
     

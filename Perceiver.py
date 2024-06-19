@@ -33,47 +33,65 @@ class InputEmbedding(nn.Module):
         return token_embed + pos_encodings
 
 class MultiHeadSelfAttention(nn.Module):
-    def __init__(self, embed_dim, heads=4):
+    def __init__(self, embed_dim, heads = 4):
         super().__init__()
+
         assert embed_dim % heads == 0
         
         self.embed_dim = embed_dim
         self.heads = heads
-        self.d_k = embed_dim // heads
+        self.d_k = embed_dim // heads # Dimenstions of vector seen by each head
         
-        self.w_q = nn.Linear(embed_dim, embed_dim, bias=False)
-        self.w_k = nn.Linear(embed_dim, embed_dim, bias=False)
-        self.w_v = nn.Linear(embed_dim, embed_dim, bias=False)
-        self.w_o = nn.Linear(embed_dim, embed_dim, bias=False)
-        self.dropout = nn.Dropout(0.1)
+        self.w_q = nn.Linear(embed_dim, embed_dim, bias = False)
+        self.w_k = nn.Linear(embed_dim, embed_dim, bias = False)
+        self.w_v = nn.Linear(embed_dim, embed_dim, bias = False)
+        
+        self.w_o = nn.Linear(embed_dim, embed_dim, bias = False)
+        self.dropuout = nn.Dropout(0.1)
+        
         self.attention_scores = None
-
+          
     def attention(self, query, key, value, mask=None):
         d_k = query.shape[-1]
-        attention_scores = torch.matmul(query, key.transpose(-2, -1)) / np.sqrt(d_k)
         
+        #(batch, head, seq_len, d_k) ---> (batch, head, seq_length, seq_length)
+        attention_scores = torch.matmul(query, key.transpose(-2, -1)) / np.sqrt(d_k)
+        # print("Attention Scores Before Masking:\n", attention_scores)
+        
+        # apply padding mask
         if mask is not None:
             attention_scores = attention_scores.masked_fill(mask == 0, float('-inf'))
+            # print("Attention Scores:\n", attention_scores)
         
         attention_scores = F.softmax(attention_scores, dim=-1)
+        # print("Attention Scores After Softmax:\n", attention_scores)
         self.attention_scores = attention_scores
         
+        #(batch, head, seq_length, seq_length) --> (batch, head, seq_len, d_k)
         return torch.matmul(attention_scores, value)
-
+        
     def forward(self, x, mask=None):
+        # print(f"Multihead input shape: {x.shape}")
         batch_size, sequence_length, _ = x.size()
         
         Q = self.w_q(x)
         K = self.w_k(x)
         V = self.w_v(x)
+        # print(f"Shapes Q: {Q.shape}, K: {K.shape}, V: {V.shape}")
         
+        # Split each tensor into heads, where each head has size d_k
+        
+        # (batch, seq_length, embed_dim) --> (batch, seq_len, head, embed_dim) --> (batch, head, seq_len, embed_dim)
         Q = Q.view(batch_size, sequence_length, self.heads, self.d_k).transpose(1, 2)
         K = K.view(batch_size, sequence_length, self.heads, self.d_k).transpose(1, 2)
         V = V.view(batch_size, sequence_length, self.heads, self.d_k).transpose(1, 2)
+        # print(f"Shapes Q': {Q.shape}, K': {K.shape}, V': {V.shape}")
         
         attention_output = self.attention(Q, K, V, mask=mask)
-        attention_output = self.dropout(attention_output)
+
+        attention_output = self.dropuout(attention_output)
         
+        # (batch, head, seq_len, d_k) --> (batch, seq_len, head, d_k) --> (batch, seq_len, head * d_k)
         combined_heads = attention_output.transpose(1, 2).contiguous().view(batch_size, sequence_length, self.heads * self.d_k)
         return self.w_o(combined_heads)
 
@@ -105,19 +123,21 @@ class CrossAttention(nn.Module):
         batch_size, seq_length, _ = input.size()
         _, latent_length, _ = latent.size()
         
-        Q = self.w_q(latent)
-        K = self.w_k(input)
-        V = self.w_v(input)
+        Q = self.w_q(latent)  # Shape: [batch_size, latent_length, latent_dim]
+        K = self.w_k(input)   # Shape: [batch_size, seq_length, latent_dim]
+        V = self.w_v(input)   # Shape: [batch_size, seq_length, latent_dim]
         
-        Q = Q.view(batch_size, latent_length, self.heads, self.d_k).transpose(1, 2)
-        K = K.view(batch_size, seq_length, self.heads, self.d_k).transpose(1, 2)
-        V = V.view(batch_size, seq_length, self.heads, self.d_k).transpose(1, 2)
+        Q = Q.view(batch_size, latent_length, self.heads, self.d_k).transpose(1, 2)  # Shape: [batch_size, heads, latent_length, d_k]
+        K = K.view(batch_size, seq_length, self.heads, self.d_k).transpose(1, 2)      # Shape: [batch_size, heads, seq_length, d_k]
+        V = V.view(batch_size, seq_length, self.heads, self.d_k).transpose(1, 2)      # Shape: [batch_size, heads, seq_length, d_k]
         
-        attention_output = self.attention(Q, K, V, mask=mask)
-        attention_output = self.dropout(attention_output)
+        attention_output = self.attention(Q, K, V, mask=mask)  # Shape: [batch_size, heads, latent_length, d_k]
+        attention_output = attention_output.transpose(1, 2).contiguous().view(batch_size, latent_length, self.heads * self.d_k)  # Shape: [batch_size, latent_length, latent_dim]
         
-        combined_heads = attention_output.transpose(1, 2).contiguous().view(batch_size, latent_length, self.heads * self.d_k)
-        return self.w_o(combined_heads)
+        out = self.w_o(attention_output)  # Shape: [batch_size, latent_length, latent_dim]
+        out = self.dropout(out)
+        
+        return out
 
 class TransformerBlock(nn.Module):
     def __init__(self, embed_dim, heads, d_ff):
@@ -160,6 +180,8 @@ class PerceiverModel(nn.Module):
             latent = layer(latent)
         
         x = self.to_probs(latent)  # Shape: [batch_size, latent_len, num_tokens]
+        print(F.softmax(x, dim=-1), "this is the raw output of the model")
+
         return F.log_softmax(x, dim=-1)  # Apply log_softmax for the NLL loss
 
 

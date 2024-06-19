@@ -1,0 +1,674 @@
+2024-06-19 13:37:50,549 INFO    StreamThr :68709 [internal.py:wandb_internal():85] W&B internal server running at pid: 68709, started at: 2024-06-19 13:37:50.548960
+2024-06-19 13:37:50,550 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: status
+2024-06-19 13:37:50,553 INFO    WriterThread:68709 [datastore.py:open_for_write():87] open: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/run-tnexdb1t.wandb
+2024-06-19 13:37:50,553 DEBUG   SenderThread:68709 [sender.py:send():379] send: header
+2024-06-19 13:37:50,570 DEBUG   SenderThread:68709 [sender.py:send():379] send: run
+2024-06-19 13:37:51,013 INFO    SenderThread:68709 [dir_watcher.py:__init__():211] watching files in: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files
+2024-06-19 13:37:51,013 INFO    SenderThread:68709 [sender.py:_start_run_threads():1188] run started: tnexdb1t with start time 1718797070.549589
+2024-06-19 13:37:51,027 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: check_version
+2024-06-19 13:37:51,028 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: check_version
+2024-06-19 13:37:51,160 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: run_start
+2024-06-19 13:37:51,168 DEBUG   HandlerThread:68709 [system_info.py:__init__():26] System info init
+2024-06-19 13:37:51,169 DEBUG   HandlerThread:68709 [system_info.py:__init__():41] System info init done
+2024-06-19 13:37:51,169 INFO    HandlerThread:68709 [system_monitor.py:start():194] Starting system monitor
+2024-06-19 13:37:51,169 INFO    SystemMonitor:68709 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-06-19 13:37:51,169 INFO    HandlerThread:68709 [system_monitor.py:probe():214] Collecting system info
+2024-06-19 13:37:51,170 INFO    SystemMonitor:68709 [interfaces.py:start():188] Started cpu monitoring
+2024-06-19 13:37:51,175 INFO    SystemMonitor:68709 [interfaces.py:start():188] Started disk monitoring
+2024-06-19 13:37:51,175 INFO    SystemMonitor:68709 [interfaces.py:start():188] Started gpuapple monitoring
+2024-06-19 13:37:51,178 INFO    SystemMonitor:68709 [interfaces.py:start():188] Started memory monitoring
+2024-06-19 13:37:51,179 INFO    SystemMonitor:68709 [interfaces.py:start():188] Started network monitoring
+2024-06-19 13:37:51,273 ERROR   HandlerThread:68709 [gpu_apple.py:probe():176] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 164, in probe
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:37:51,274 DEBUG   HandlerThread:68709 [system_info.py:probe():152] Probing system
+2024-06-19 13:37:51,278 DEBUG   HandlerThread:68709 [system_info.py:_probe_git():137] Probing git
+2024-06-19 13:37:51,290 DEBUG   HandlerThread:68709 [system_info.py:_probe_git():145] Probing git done
+2024-06-19 13:37:51,291 DEBUG   HandlerThread:68709 [system_info.py:probe():200] Probing system done
+2024-06-19 13:37:51,291 DEBUG   HandlerThread:68709 [system_monitor.py:probe():223] {'os': 'macOS-14.0-arm64-arm-64bit', 'python': '3.11.4', 'heartbeatAt': '2024-06-19T11:37:51.274966', 'startedAt': '2024-06-19T11:37:50.542508', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/Users/philip/Desktop/Bachelor thesis project/perceiver_train.py', 'codePathLocal': 'perceiver_train.py', 'codePath': 'perceiver_train.py', 'git': {'remote': 'https://github.com/Rockyph/Bachelor-thesis-project.git', 'commit': '5706e6eb375cc1ed4c6a891bf4cee074d9f093d6'}, 'email': 'philipchristianrocki@gmail.com', 'root': '/Users/philip/Desktop/Bachelor thesis project', 'host': 'Philip.local', 'username': 'philip', 'executable': '/usr/local/bin/python3', 'cpu_count': 8, 'cpu_count_logical': 8, 'disk': {'/': {'total': 460.4317207336426, 'used': 13.794960021972656}}, 'gpuapple': {'type': 'arm', 'vendor': 'Apple'}, 'memory': {'total': 16.0}}
+2024-06-19 13:37:51,291 INFO    HandlerThread:68709 [system_monitor.py:probe():224] Finished collecting system info
+2024-06-19 13:37:51,291 INFO    HandlerThread:68709 [system_monitor.py:probe():227] Publishing system info
+2024-06-19 13:37:51,291 INFO    HandlerThread:68709 [system_monitor.py:probe():229] Finished publishing system info
+2024-06-19 13:37:51,293 DEBUG   SenderThread:68709 [sender.py:send():379] send: files
+2024-06-19 13:37:51,293 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2024-06-19 13:37:51,347 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:37:51,354 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: python_packages
+2024-06-19 13:37:51,354 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: python_packages
+2024-06-19 13:37:51,354 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-19 13:37:51,354 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:37:51,354 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: stop_status
+2024-06-19 13:37:51,621 DEBUG   SenderThread:68709 [sender.py:send():379] send: telemetry
+2024-06-19 13:37:51,864 INFO    wandb-upload_0:68709 [upload_job.py:push():130] Uploaded file /var/folders/fk/p554nvt53n7d415kgm1817100000gn/T/tmpz_urjk_6wandb/04lmb5n2-wandb-metadata.json
+2024-06-19 13:37:52,019 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-metadata.json
+2024-06-19 13:37:52,019 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:37:52,019 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/requirements.txt
+2024-06-19 13:37:52,346 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:52,347 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:52,347 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:52,347 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:52,357 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:37:52,970 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:52,970 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:52,970 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:52,971 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:53,024 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:37:53,362 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:37:53,479 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:37:53,563 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:53,563 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:53,563 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:53,564 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:54,026 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:37:54,027 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:37:54,083 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:54,083 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:54,083 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:54,083 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:54,366 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:37:54,580 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:54,580 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:54,580 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:54,581 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:55,032 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:37:55,059 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:55,060 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:55,060 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:55,060 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:55,371 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:37:55,571 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:55,572 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:55,572 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:55,572 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: status_report
+2024-06-19 13:37:55,574 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:55,634 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:37:56,037 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:37:56,037 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:37:56,098 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:56,099 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:56,099 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:56,099 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:56,376 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:37:56,584 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:56,584 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:56,584 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:56,584 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:57,043 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:37:57,064 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:57,064 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:57,064 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:57,064 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:57,381 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:37:57,541 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:57,541 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:57,541 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:57,541 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:57,744 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:37:58,044 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:58,044 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:58,044 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:58,044 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:58,048 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:37:58,048 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:37:58,383 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:37:58,539 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:58,539 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:58,539 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:58,540 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:59,054 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:37:59,097 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:59,098 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:59,098 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:59,098 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:59,385 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:37:59,622 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:37:59,622 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:37:59,622 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:37:59,623 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:37:59,855 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:00,056 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:00,056 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:00,148 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:00,148 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:00,148 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:00,149 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:00,388 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:00,640 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:00,640 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:00,641 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:00,641 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: status_report
+2024-06-19 13:38:00,641 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:01,057 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:01,150 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:01,150 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:01,150 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:01,151 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:01,392 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:01,667 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:01,667 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:01,667 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:01,668 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:01,963 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:02,062 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:02,062 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:02,204 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:02,204 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:02,204 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:02,205 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:02,397 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:02,706 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:02,706 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:02,706 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:02,706 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:03,067 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:03,317 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:03,317 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:03,318 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:03,318 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:03,399 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:03,913 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:03,913 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:03,913 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:03,914 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:04,070 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:04,070 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:04,125 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:04,401 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:04,544 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:04,544 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:04,544 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:04,545 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:05,048 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:05,049 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:05,049 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:05,049 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:05,073 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:05,406 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:05,531 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:05,531 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:05,531 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:05,531 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:05,806 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: status_report
+2024-06-19 13:38:06,029 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:06,030 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:06,030 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:06,030 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:06,077 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:06,077 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:06,249 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:06,359 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-19 13:38:06,359 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: stop_status
+2024-06-19 13:38:06,408 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:06,591 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:06,592 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:06,592 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:06,592 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:07,077 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:07,153 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:07,154 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:07,154 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:07,154 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:07,417 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:07,703 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:07,704 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:07,704 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:07,704 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:08,083 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:08,083 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:08,202 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:08,202 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:08,202 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:08,203 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:08,371 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:08,422 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:08,726 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:08,726 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:08,726 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:08,727 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:09,088 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:09,210 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:09,211 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:09,211 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:09,211 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:09,425 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:09,696 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:09,697 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:09,697 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:09,697 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:10,090 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:10,090 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:10,186 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:10,186 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:10,186 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:10,186 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:10,427 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:10,480 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:10,674 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:10,674 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:10,675 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:10,675 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:10,939 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: status_report
+2024-06-19 13:38:11,096 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:11,155 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:11,156 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:11,156 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:11,156 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:11,428 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:11,639 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:11,639 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:11,639 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:11,640 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:12,101 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:12,102 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:12,138 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:12,138 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:12,139 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:12,139 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:12,430 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:12,599 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:12,643 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:12,644 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:12,644 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:12,644 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:13,107 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:13,128 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:13,128 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:13,128 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:13,128 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:13,432 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:13,653 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:13,653 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:13,653 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:13,654 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:14,112 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:14,112 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:14,142 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:14,142 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:14,142 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:14,142 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:14,434 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:14,636 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:14,637 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:14,637 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:14,637 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:14,721 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:15,117 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:15,139 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:15,139 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:15,139 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:15,139 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:15,436 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:15,649 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:15,649 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:15,649 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:15,649 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:16,120 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:16,120 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:16,171 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:16,171 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:16,171 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:16,171 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: status_report
+2024-06-19 13:38:16,172 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:16,440 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:16,661 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:16,661 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:16,661 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:16,661 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:16,830 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:17,127 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:17,160 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:17,160 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:17,160 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:17,161 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:17,442 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:17,652 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:17,653 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:17,653 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:17,653 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:18,130 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:18,131 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:18,161 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:18,162 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:18,162 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:18,162 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:18,447 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:18,670 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:18,670 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:18,670 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:18,670 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:18,944 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:19,136 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:19,169 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:19,169 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:19,169 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:19,170 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:19,452 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:19,651 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:19,652 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:19,652 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:19,652 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:20,131 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:20,132 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:20,132 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:20,132 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:20,141 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:20,141 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:20,454 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:20,658 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:20,659 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:20,659 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:20,659 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:21,108 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:21,147 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:21,300 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:21,300 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:21,302 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: status_report
+2024-06-19 13:38:21,364 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-19 13:38:21,456 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:21,487 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:21,487 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:21,488 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: stop_status
+2024-06-19 13:38:21,882 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:21,882 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:21,882 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:21,882 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:22,152 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/config.yaml
+2024-06-19 13:38:22,152 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:22,152 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:22,430 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:22,431 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:22,431 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:22,431 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:22,456 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:22,942 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:22,942 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:22,942 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:22,942 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:23,157 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:23,261 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:23,458 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:23,528 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:23,528 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:23,528 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:23,529 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:24,116 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:24,117 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:24,117 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:24,117 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:24,162 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:24,162 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:24,460 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:24,649 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:24,649 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:24,649 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:24,650 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:25,167 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:25,231 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:25,231 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:25,231 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:25,231 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:25,403 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:25,462 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:25,793 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:25,794 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:25,794 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:25,794 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:26,173 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:26,173 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:26,324 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:26,324 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:26,324 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:26,325 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:26,467 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:26,594 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: status_report
+2024-06-19 13:38:26,811 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:26,811 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:26,811 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:26,812 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:27,178 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:27,294 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:27,294 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:27,294 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:27,295 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:27,468 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:27,530 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:27,823 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:27,823 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:27,823 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:27,824 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:28,183 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:28,183 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:28,307 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:28,308 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:28,308 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:28,308 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:28,473 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:28,853 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:28,853 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:28,853 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:28,853 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:29,188 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:29,417 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:29,418 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:29,418 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:29,418 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:29,478 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:29,644 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:30,004 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:30,005 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:30,005 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:30,005 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:30,194 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:30,194 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:30,481 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:30,588 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:30,588 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:30,588 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:30,589 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:31,086 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:31,086 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:31,086 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:31,087 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:31,199 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:31,482 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-19 13:38:31,710 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-19 13:38:31,712 DEBUG   SenderThread:68709 [sender.py:send():379] send: history
+2024-06-19 13:38:31,712 DEBUG   SenderThread:68709 [sender.py:send_request():406] send_request: summary_record
+2024-06-19 13:38:31,712 DEBUG   HandlerThread:68709 [handler.py:handle_request():158] handle_request: status_report
+2024-06-19 13:38:31,713 INFO    SenderThread:68709 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-06-19 13:38:31,796 ERROR   gpuapple  :68709 [gpu_apple.py:sample():110] GPU stats error: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/sdk/internal/system/assets/gpu_apple.py", line 64, in sample
+    subprocess.check_output(command, universal_newlines=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/wandb/bin/apple_gpu_stats', '--json']' died with <Signals.SIGTRAP: 5>.
+2024-06-19 13:38:32,204 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/output.log
+2024-06-19 13:38:32,205 INFO    Thread-12 :68709 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/philip/Desktop/Bachelor thesis project/wandb/run-20240619_133750-tnexdb1t/files/wandb-summary.json
+2024-06-19 13:38:33,267 INFO    memory    :68709 [interfaces.py:monitor():138] Process proc.memory.rssMB has exited.
+2024-06-19 13:38:33,268 DEBUG   SystemMonitor:68709 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-06-19 13:38:33,268 DEBUG   SystemMonitor:68709 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-06-19 13:38:33,268 DEBUG   SystemMonitor:68709 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-06-19 13:38:33,268 DEBUG   SenderThread:68709 [sender.py:send():379] send: telemetry
+2024-06-19 13:38:33,268 DEBUG   SenderThread:68709 [sender.py:send():379] send: stats
+2024-06-19 13:38:33,334 INFO    MainThread:68709 [internal.py:handle_exit():75] Internal process exited

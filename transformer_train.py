@@ -8,9 +8,9 @@ from utils import config, get_device
 from torch.optim.lr_scheduler import LambdaLR
 
 import wandb
-api_key = "14037597d70b3d9a3bfb20066d401edf14065e6d"
-wandb.login(key=api_key)
-wandb.init(project="Transformer autoregressive model", config=config)
+# api_key = "14037597d70b3d9a3bfb20066d401edf14065e6d"
+# wandb.login(key=api_key)
+# wandb.init(project="Transformer autoregressive model", config=config)
 
 def get_optimizer(optimizer_name, model_parameters, lr):
     if optimizer_name == 'SGD':

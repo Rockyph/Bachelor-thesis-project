@@ -1,0 +1,37 @@
+{
+    "os": "macOS-14.0-arm64-arm-64bit",
+    "python": "3.11.4",
+    "heartbeatAt": "2024-06-18T19:46:51.690900",
+    "startedAt": "2024-06-18T19:46:50.973264",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/philip/Desktop/Bachelor thesis project/perceiver_train.py",
+    "codePathLocal": "perceiver_train.py",
+    "codePath": "perceiver_train.py",
+    "git": {
+        "remote": "https://github.com/Rockyph/Bachelor-thesis-project.git",
+        "commit": "5706e6eb375cc1ed4c6a891bf4cee074d9f093d6"
+    },
+    "email": "philipchristianrocki@gmail.com",
+    "root": "/Users/philip/Desktop/Bachelor thesis project",
+    "host": "Philip.local",
+    "username": "philip",
+    "executable": "/usr/local/bin/python3",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "disk": {
+        "/": {
+            "total": 460.4317207336426,
+            "used": 13.794960021972656
+        }
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 16.0
+    }
+}
