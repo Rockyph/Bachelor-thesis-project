@@ -42,15 +42,15 @@ def train():
 
         output = model(input)
     
-        max_prob_tokens = torch.argmax(output, dim=-1)
-        print(f"Output sample: {output[0, 0, :10]}")
-        print(f"Tokens with highest probability for the first position in batch: {max_prob_tokens[0, :10]}")
-        print(f"Target sample: {target[0, :10]}")
+        # max_prob_tokens = torch.argmax(output, dim=-1)
+        # print(f"Output sample: {output[0, 0, :10]}")
+        # print(f"Tokens with highest probability for the first position in batch: {max_prob_tokens[0, :10]}")
+        # print(f"Target sample: {target[0, :10]}")
         
-        if torch.isnan(output).any():
-            print("NaN detected in output")
+        # if torch.isnan(output).any():
+        #     print("NaN detected in output")
 
-        print(f"Target min value: {output.min()}, Target max value: {output.max()}")
+        # print(f"Target min value: {output.min()}, Target max value: {output.max()}")
 
         loss = F.nll_loss(output.transpose(1, 2), target, reduction='mean')
         loss.backward()
