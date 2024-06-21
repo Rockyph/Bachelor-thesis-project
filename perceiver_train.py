@@ -11,9 +11,9 @@ import tqdm
 import random
 
 # Set up wandb
-# api_key = "14037597d70b3d9a3bfb20066d401edf14065e6d"
-# wandb.login(key=api_key)
-# wandb.init(project="Perceiver autoregressive model", config=config)
+api_key = "14037597d70b3d9a3bfb20066d401edf14065e6d"
+wandb.login(key=api_key)
+wandb.init(project="Perceiver autoregressive model", config=config)
 
 def get_optimizer(optimizer_name, model_parameters, lr):
     if optimizer_name == 'SGD':
@@ -56,13 +56,13 @@ def train():
         loss.backward()
         total_norm = nn.utils.clip_grad_norm_(model.parameters(), 1.0)
 
-        # wandb.log({
-        #     "Loss/train": loss.item(),
-        #     "Gradient norm": total_norm,
-        #     "Learning Rate": config['learning_rate'],
-        #     "Batch": i,
-        #     "Instances Seen": instances_seen,
-        # })
+        wandb.log({
+            "Loss/train": loss.item(),
+            "Gradient norm": total_norm,
+            "Learning Rate": config['learning_rate'],
+            "Batch": i,
+            "Instances Seen": instances_seen,
+        })
 
         optimizer.step()
         
@@ -84,7 +84,7 @@ def train():
             bits_per_byte = estimate_compression(model, data_sub, 10000, context=config['char_to_gen'], batch_size=config['batch_size'] * 2)
             
             print(f'Batch {i}: {bits_per_byte:.4f} bits per byte')
-            # wandb.log({"Bits per byte": bits_per_byte})
+            wandb.log({"Bits per byte": bits_per_byte})
 
 train()
 
