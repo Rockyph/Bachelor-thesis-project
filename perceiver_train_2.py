@@ -2,15 +2,15 @@ import torch
 from datetime import datetime
 
 from utils import *
-from Perceiver_2 import TransformerModel_2
+from Perceiver_2 import Perceiver_2
 from data import download_and_extract
 from utils import config, get_device
 from torch.optim.lr_scheduler import LambdaLR
 
 import wandb
-# api_key = "14037597d70b3d9a3bfb20066d401edf14065e6d"
-# wandb.login(key=api_key)
-# wandb.init(project="Transformer autoregressive model", config=config)
+api_key = "14037597d70b3d9a3bfb20066d401edf14065e6d"
+wandb.login(key=api_key)
+wandb.init(project="Transformer autoregressive model", config=config)
 
 def get_optimizer(optimizer_name, model_parameters, lr):
     if optimizer_name == 'SGD':
@@ -25,8 +25,8 @@ def train():
     device = get_device()
     
     train_data, val_data, test_data = download_and_extract('http://mattmahoney.net/dc/enwik8.zip', config['data_path'])
-    model = TransformerModel_2(embed_dim=config['embed_dim'], heads=config['heads'], d_ff=config['d_ff'],
-                        seq_len=config['seq_len'], N=config['N'], num_tokens=config['num_tokens']).to(device)
+    model = Perceiver_2(embed_dim=config['embed_dim'], heads=config['heads'], d_ff=config['d_ff'],
+                        seq_len=config['seq_len'], N=config['N'], num_tokens=config['num_tokens'], latent_dim=256, latent_size=256).to(device)
 
     optimizer = get_optimizer(config['optimizer'], model.parameters(), config['learning_rate'])
 
@@ -53,11 +53,11 @@ def train():
         
         total_norm = nn.utils.clip_grad_norm_(model.parameters(), 1.0)
         
-        # wandb.log({"Loss/train": loss.item(),
-        #     "Gradient norm": total_norm,
-        #     "Learning Rate": config['learning_rate'],
-        #     "Batch": i,
-        #     "Instances Seen": instances_seen})
+        wandb.log({"Loss/train": loss.item(),
+            "Gradient norm": total_norm,
+            "Learning Rate": config['learning_rate'],
+            "Batch": i,
+            "Instances Seen": instances_seen})
         
         optimizer.step()
         sch.step()
@@ -84,7 +84,7 @@ def train():
             #    training.
 
             print(f'epoch{i}: {bits_per_byte:.4} bits per byte')
-            # wandb.log({"Loss/train": bits_per_byte})
+            wandb.log({"Loss/train": bits_per_byte})
             #-- 0.9 bit per byte is around the state of the art.
             
 train()

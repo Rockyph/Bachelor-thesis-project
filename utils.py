@@ -16,7 +16,7 @@ config = {
     'lr_warmup': 10000,
     'device': 'cuda',  # 'cuda' or 'cpu'
     'seed': 42,
-    'embed_dim': 128,
+    'embed_dim': 256,
     'heads': 4,
     'd_ff': 256,
     'seq_len': 256,

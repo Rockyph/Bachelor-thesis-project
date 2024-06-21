@@ -142,36 +142,55 @@ class TransformerBlock(nn.Module):
         fforward = self.feed_forward(x)
         return self.norm2(fforward + x)
         
-class TransformerModel_2(nn.Module):
-    def __init__(self, embed_dim, heads, d_ff, seq_len, N, num_tokens):
+class Perceiver_2(nn.Module):
+    def __init__(self, embed_dim, heads, d_ff, seq_len, N, num_tokens, latent_dim, latent_size):
         super().__init__()
         
         self.num_tokens = num_tokens
+        self.latent_dim = latent_dim
+        self.latent_size = latent_size
         
         self.embedding_layer = InputEmbedding(num_tokens, embed_dim, seq_len)
-        self.transformer_layers = nn.ModuleList(
-            [TransformerBlock(embed_dim, heads, d_ff) for _ in range(N)]
+        self.latent_array = nn.Parameter(torch.randn(latent_size, latent_dim)).to(device)
+        
+        self.cross_attention_layers = nn.ModuleList(
+            [MultiHeadCrossAttention(latent_dim, heads) for _ in range(3)]  # Assuming 3 layers for cross-attention
         )
+        
+        self.transformer_layers = nn.ModuleList(
+            [TransformerBlock(latent_dim, heads, d_ff) for _ in range(N)]
+        )
+        
+        self.query_for_final_cross_attention = nn.Parameter(torch.randn(seq_len, latent_dim)).to(device)
+        self.final_cross_attention = MultiHeadCrossAttention(latent_dim, heads).to(device)
         
         self.dropout = nn.Dropout(0.1)
         
-        self.to_probs = nn.Linear(embed_dim, num_tokens)
+        self.to_probs = nn.Linear(latent_dim, num_tokens)
     
-    def forward(self, x, context=None):
+    def forward(self, x):
         x = self.embedding_layer(x)
         batch_size, seq_length, embed_dim = x.size()
         
         x = self.dropout(x)
         
+        latent = self.latent_array.unsqueeze(0).repeat(batch_size, 1, 1)
         mask = torch.tril(torch.ones(seq_length, seq_length, device=x.device)).unsqueeze(0).unsqueeze(0)
         
-        for i, layer in enumerate(self.transformer_layers):
-            if i == 0 and context is not None:
-                x = layer(x, context=context, mask=mask)
-            else:
-                x = layer(x, mask=mask)
+        # Apply cross-attention layers to reduce dimensionality
+        for layer in self.cross_attention_layers:
+            latent = layer(latent, context=x, mask=mask)
+        
+        # Apply standard transformer layers
+        for layer in self.transformer_layers:
+            latent = layer(latent, mask=mask)
+        
+        # Use final cross-attention to return to original transformer space
+        query = self.query_for_final_cross_attention.unsqueeze(0).repeat(batch_size, 1, 1)
+        x = self.final_cross_attention(query, context=latent, mask=mask)
         
         x = self.to_probs(x.view(batch_size * seq_length, embed_dim)).view(batch_size, seq_length, self.num_tokens)
         x = F.log_softmax(x, dim=2)
         
         return x
+        
