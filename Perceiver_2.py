@@ -143,6 +143,7 @@ class TransformerModelWithCrossAttention(nn.Module):
         latent = self.cross_attention(latent, x)
         for layer in self.transformer_layers:
             latent = layer(latent)
+        latent = latent.mean(dim=1)
         x = self.to_probs(latent)  # Shape: [batch_size, latent_len, num_tokens]
         return F.log_softmax(x, dim=-1)  # Apply log_softmax for the NLL loss
 
