@@ -50,6 +50,18 @@ def slice_batch(data, seq_length, batch_size):
     
     return inputs, targets
 
+
+def slice_batch_perceiver(data, seq_length, batch_size):
+    start_indices = torch.randint(size=(batch_size,), low=0, high=data.size(0) - seq_length - 1)
+    
+    sequences_inputs = [data[start_i: start_i + seq_length] for start_i in start_indices]
+    sequences_targets = [data[start_i + 1: start_i + seq_length + 1] for start_i in start_indices]
+    
+    inputs = torch.cat([seq[None, :] for seq in sequences_inputs], dim=0).to(torch.long)
+    targets = torch.cat([seq[None, :] for seq in sequences_targets], dim=0).to(torch.long)
+    
+    return inputs.transpose(0,1), targets
+
 def sample(lnprobs, temperature=1.0):
     """
     Sample an element from a categorical distribution

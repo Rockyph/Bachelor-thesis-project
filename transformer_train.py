@@ -84,7 +84,7 @@ def train():
             #    training.
 
             print(f'epoch{i}: {bits_per_byte:.4} bits per byte')
-            wandb.log({"Loss/train": bits_per_byte})
+            wandb.log({"bytes_per_char": bits_per_byte})
             # -- 0.9 bit per byte is around the state of the art.
             
 train()
